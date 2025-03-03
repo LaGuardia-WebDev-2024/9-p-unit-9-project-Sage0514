@@ -9,11 +9,7 @@ var answer=4;
 var answer=5;
 var answer=6;
 var answer=7;
-var starY=400;
-var starY1=400;
-var starY2=400;
-var starY3=400;
-var starY4=400;
+var stary1=400;
 
 draw = function(){
   background(100,100,100);
@@ -65,48 +61,57 @@ draw = function(){
     text("Unlimited", 177, 240);
     text("Aura", 187, 260);
   }
+  
+  drawStar(100+stary1,100);
+    stary1=starx1-1;
+    drawStar(50+stary1,25);
+    drawStar(200+stary1,100);
+    drawStar(250+stary1,50);
+    drawStar(70+stary1,150);
+    if(stary1<0){
+   stary1=400;}
   if(mousePressed){
-  text("⋆｡°✩", random(0,400), random(0,400),textSize(30));
-  text("✩₊˚.⋆☾⋆⁺₊✧", random(20,400), random(20,400),textSize(50));
+  text("⋆｡°✩", random(0,400), random(0,400));
+  text("✩₊˚.⋆☾⋆⁺₊✧", random(20,400), random(20,400));
   }
   
-};
+  /*
 //Animation code goes here
 //stroke
 ellipse(82,starY4,10,10)
-bubbleY5=starY4-6;
- ellipse(168,bubbleY4,10,10)
- bubbleY4=bubbleY4-1;
+starY4=starY4-6;
+ ellipse(168,starY3,10,10)
+ starY3=bubbleY3-1;
  ellipse(263,bubbleY3,7,7)
- bubbleY3=bubbleY3-4;
+ starY2=starY2-4;
  ellipse(338,bubbleY2,5,5)
- bubbleY2=bubbleY2-3;
+ starY1=starY1-3;
  ellipse(420,bubbleY1,20,20)
- bubbleY1=bubbleY1-5;
- ellipse(500,bubbleY,10,10)
-  bubbleY=bubbleY-2 ;
+ starY=starY-5;
+
    
-   if(bubbleY<0){
-   bubbleY=400;
+   if(starY<0){
+   starY=400;
    }
-    if(bubbleY1<0){
-   bubbleY1=400;
+    if(starY1<0){
+   starY1=400;
    }
-    if(bubbleY2<0){
-   bubbleY2=400;
+    if(starY2<0){
+   starY2=400;
    }
-    if(bubbleY3<0){
-   bubbleY3=400;
+    if(starY3<0){
+   starY3=400;
    }
-    if(bubbleY4<0){
-   bubbleY4=400;
+    if(starY4<0){
+   starY4=400;
    }
-    if(bubbleY5<0){
-   bubbleY5=400;
-   }
+   */
    }
 mouseClicked = function(){
   answer = round(random(1, 7));
 };
 
-
+var drawStar = function(starX, starY){
+  textSize(20);
+  text("☆", starX, starY);
+};  
